@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 
 namespace vietnam_qr_pay_csharp
 {
@@ -330,6 +331,10 @@ namespace vietnam_qr_pay_csharp
             return content + crc;
         }
 
-    }
+        public void SetUnreservedField(string id , string value) {
+            if (this.unreserved == null) this.unreserved = new Dictionary<string, string>();
+            this.unreserved[id] = value;
+        }
+}
 
 }
